@@ -1,0 +1,405 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/navyB"
+    tools:context=".MainActivity">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:background="@drawable/gradient_bg"
+        android:orientation="vertical"
+        android:layout_marginBottom="2dp"
+        app:layout_constraintBottom_toTopOf="@+id/divider"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <HorizontalScrollView
+            android:id="@+id/scrollView"
+            android:layout_marginTop="20dp"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="0.5"
+            android:scrollbars="none">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="end|center_vertical"
+                android:gravity="center_vertical|end"
+                android:layout_marginEnd="24dp"
+                android:text="2+222222222222222222220 "
+                android:textColor="@color/white"
+                android:textSize="40sp" />
+
+        </HorizontalScrollView>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_gravity="end|center_vertical"
+            android:layout_margin="12dp"
+            android:gravity="center_vertical|end"
+            android:text="4"
+            android:textColor="@color/white"
+            android:textSize="56sp"
+            android:layout_weight="0.6" />
+
+    </LinearLayout>
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/divider"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.30" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guidelineH1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.44" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guidelineH2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.58" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guidelineH3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.72" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guidelineH4"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.86" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guidelineV1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.25" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guidelineV2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.5" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guidelineV3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.75" />
+
+    <TextView
+        android:id="@+id/clear"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_margin="2dp"
+        android:background="@drawable/gradient_bg"
+        android:gravity="center"
+        android:text="C"
+        android:textColor="@color/white"
+        android:textSize="40sp"
+        app:layout_constraintBottom_toTopOf="@id/guidelineH1"
+        app:layout_constraintEnd_toStartOf="@id/guidelineV1"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/divider" />
+
+
+    <TextView
+        android:id="@+id/equal"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_margin="2dp"
+        android:background="@drawable/gradient_bg"
+        android:gravity="center"
+        android:text="="
+        android:textColor="@color/white"
+        android:textSize="40sp"
+        app:layout_constraintBottom_toTopOf="@id/guidelineH1"
+        app:layout_constraintEnd_toStartOf="@id/guidelineV2"
+        app:layout_constraintStart_toEndOf="@id/guidelineV1"
+        app:layout_constraintTop_toBottomOf="@id/divider" />
+
+    <TextView
+        android:id="@+id/mod"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_margin="2dp"
+        android:background="@drawable/gradient_bg"
+        android:gravity="center"
+        android:text="%"
+        android:textColor="@color/white"
+        android:textSize="40sp"
+        app:layout_constraintBottom_toTopOf="@id/guidelineH1"
+        app:layout_constraintEnd_toStartOf="@id/guidelineV3"
+        app:layout_constraintStart_toEndOf="@id/guidelineV2"
+        app:layout_constraintTop_toBottomOf="@id/divider" />
+
+
+    <ImageView
+        android:id="@+id/delete"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_margin="2dp"
+        android:background="@drawable/gradient_bg"
+        android:padding="24dp"
+        android:src="@drawable/ic_backspace"
+        app:layout_constraintBottom_toTopOf="@id/guidelineH1"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@id/guidelineV3"
+        app:layout_constraintTop_toBottomOf="@id/divider" />
+
+
+    <TextView
+        android:id="@+id/n7"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_margin="2dp"
+        android:background="@drawable/number_bg"
+        android:gravity="center"
+        android:text="7"
+        android:textColor="@color/white"
+        android:textSize="40sp"
+        app:layout_constraintBottom_toTopOf="@id/guidelineH2"
+        app:layout_constraintEnd_toStartOf="@id/guidelineV1"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/guidelineH1" />
+
+
+    <TextView
+        android:id="@+id/n8"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_margin="2dp"
+        android:background="@drawable/number_bg"
+        android:gravity="center"
+        android:text="8"
+        android:textColor="@color/white"
+        android:textSize="40sp"
+        app:layout_constraintBottom_toTopOf="@id/guidelineH2"
+        app:layout_constraintEnd_toStartOf="@id/guidelineV2"
+        app:layout_constraintStart_toEndOf="@id/guidelineV1"
+        app:layout_constraintTop_toBottomOf="@id/guidelineH1" />
+
+    <TextView
+        android:id="@+id/n9"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_margin="2dp"
+        android:background="@drawable/number_bg"
+        android:gravity="center"
+        android:text="9"
+        android:textColor="@color/white"
+        android:textSize="40sp"
+        app:layout_constraintBottom_toTopOf="@id/guidelineH2"
+        app:layout_constraintEnd_toStartOf="@id/guidelineV3"
+        app:layout_constraintStart_toEndOf="@id/guidelineV2"
+        app:layout_constraintTop_toBottomOf="@id/guidelineH1" />
+
+
+    <TextView
+        android:id="@+id/divide"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_margin="2dp"
+        android:background="@drawable/gradient_bg"
+        android:gravity="center"
+        android:text="÷"
+        android:textColor="@color/white"
+        android:textSize="40sp"
+        app:layout_constraintBottom_toTopOf="@id/guidelineH2"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@id/guidelineV3"
+        app:layout_constraintTop_toBottomOf="@id/guidelineH1" />
+
+
+    <TextView
+        android:id="@+id/n4"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_margin="2dp"
+        android:background="@drawable/number_bg"
+        android:gravity="center"
+        android:text="4"
+        android:textColor="@color/white"
+        android:textSize="40sp"
+        app:layout_constraintBottom_toTopOf="@id/guidelineH3"
+        app:layout_constraintEnd_toStartOf="@id/guidelineV1"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/guidelineH2" />
+
+
+    <TextView
+        android:id="@+id/n5"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_margin="2dp"
+        android:background="@drawable/number_bg"
+        android:gravity="center"
+        android:text="5"
+        android:textColor="@color/white"
+        android:textSize="40sp"
+        app:layout_constraintBottom_toTopOf="@id/guidelineH3"
+        app:layout_constraintEnd_toStartOf="@id/guidelineV2"
+        app:layout_constraintStart_toEndOf="@id/guidelineV1"
+        app:layout_constraintTop_toBottomOf="@id/guidelineH2" />
+
+    <TextView
+        android:id="@+id/n6"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_margin="2dp"
+        android:background="@drawable/number_bg"
+        android:gravity="center"
+        android:text="6"
+        android:textColor="@color/white"
+        android:textSize="40sp"
+        app:layout_constraintBottom_toTopOf="@id/guidelineH3"
+        app:layout_constraintEnd_toStartOf="@id/guidelineV3"
+        app:layout_constraintStart_toEndOf="@id/guidelineV2"
+        app:layout_constraintTop_toBottomOf="@id/guidelineH2" />
+
+
+    <TextView
+        android:id="@+id/multiply"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_margin="2dp"
+        android:background="@drawable/gradient_bg"
+        android:gravity="center"
+        android:text="×"
+        android:textColor="@color/white"
+        android:textSize="40sp"
+        app:layout_constraintBottom_toTopOf="@id/guidelineH3"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@id/guidelineV3"
+        app:layout_constraintTop_toBottomOf="@id/guidelineH2" />
+
+
+    <TextView
+        android:id="@+id/n1"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_margin="2dp"
+        android:background="@drawable/number_bg"
+        android:gravity="center"
+        android:text="1"
+        android:textColor="@color/white"
+        android:textSize="40sp"
+        app:layout_constraintBottom_toTopOf="@id/guidelineH4"
+        app:layout_constraintEnd_toStartOf="@id/guidelineV1"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/guidelineH3" />
+
+
+    <TextView
+        android:id="@+id/n2"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_margin="2dp"
+        android:background="@drawable/number_bg"
+        android:gravity="center"
+        android:text="2"
+        android:textColor="@color/white"
+        android:textSize="40sp"
+        app:layout_constraintBottom_toTopOf="@id/guidelineH4"
+        app:layout_constraintEnd_toStartOf="@id/guidelineV2"
+        app:layout_constraintStart_toEndOf="@id/guidelineV1"
+        app:layout_constraintTop_toBottomOf="@id/guidelineH3" />
+
+    <TextView
+        android:id="@+id/n3"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_margin="2dp"
+        android:background="@drawable/number_bg"
+        android:gravity="center"
+        android:text="3"
+        android:textColor="@color/white"
+        android:textSize="40sp"
+        app:layout_constraintBottom_toTopOf="@id/guidelineH4"
+        app:layout_constraintEnd_toStartOf="@id/guidelineV3"
+        app:layout_constraintStart_toEndOf="@id/guidelineV2"
+        app:layout_constraintTop_toBottomOf="@id/guidelineH3" />
+
+    <TextView
+        android:id="@+id/minus"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_margin="2dp"
+        android:background="@drawable/gradient_bg"
+        android:gravity="center"
+        android:text="-"
+        android:textColor="@color/white"
+        android:textSize="40sp"
+        app:layout_constraintBottom_toTopOf="@id/guidelineH4"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@id/guidelineV3"
+        app:layout_constraintTop_toBottomOf="@id/guidelineH3" />
+
+
+    <TextView
+        android:id="@+id/n0"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_margin="2dp"
+        android:background="@drawable/number_bg"
+        android:gravity="center"
+        android:text="0"
+        android:textColor="@color/white"
+        android:textSize="40sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@id/guidelineV2"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/guidelineH4" />
+
+    <TextView
+        android:id="@+id/n."
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_margin="2dp"
+        android:background="@drawable/number_bg"
+        android:gravity="center"
+        android:text="."
+        android:textColor="@color/white"
+        android:textSize="40sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@id/guidelineV3"
+        app:layout_constraintStart_toEndOf="@id/guidelineV2"
+        app:layout_constraintTop_toBottomOf="@id/guidelineH4" />
+
+    <TextView
+        android:id="@+id/plus"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_margin="2dp"
+        android:background="@drawable/gradient_bg"
+        android:gravity="center"
+        android:text="+"
+        android:textColor="@color/white"
+        android:textSize="40sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@id/guidelineV3"
+        app:layout_constraintTop_toBottomOf="@id/guidelineH4" />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
