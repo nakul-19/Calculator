@@ -1,7 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 
-<androidx.constraintlayout.widget.ConstraintLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
@@ -10,44 +9,50 @@
     tools:context=".MainActivity">
 
     <LinearLayout
+        android:id="@+id/linearLayout"
         android:layout_width="match_parent"
         android:layout_height="0dp"
+        android:layout_marginBottom="2dp"
         android:background="@drawable/gradient_bg"
         android:orientation="vertical"
-        android:layout_marginBottom="2dp"
         app:layout_constraintBottom_toTopOf="@+id/divider"
         app:layout_constraintTop_toTopOf="parent">
 
         <HorizontalScrollView
             android:id="@+id/scrollView"
-            android:layout_marginTop="20dp"
             android:layout_width="match_parent"
             android:layout_height="0dp"
+            android:layout_marginTop="20dp"
             android:layout_weight="0.5"
             android:scrollbars="none">
 
             <TextView
+                android:id="@+id/expression"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="end|center_vertical"
+                android:layout_marginEnd="12dp"
                 android:gravity="center_vertical|end"
-                android:layout_marginEnd="24dp"
-                android:text="2+222222222222222222220 "
+                android:text="@string/_0"
                 android:textColor="@color/white"
                 android:textSize="40sp" />
 
         </HorizontalScrollView>
 
         <TextView
+            android:id="@+id/result"
             android:layout_width="match_parent"
             android:layout_height="0dp"
             android:layout_gravity="end|center_vertical"
             android:layout_margin="12dp"
+            android:layout_weight="0.6"
+            android:autoSizeMaxTextSize="56sp"
+            android:autoSizeMinTextSize="40sp"
+            android:autoSizeStepGranularity="2sp"
+            android:autoSizeTextType="uniform"
             android:gravity="center_vertical|end"
-            android:text="4"
-            android:textColor="@color/white"
-            android:textSize="56sp"
-            android:layout_weight="0.6" />
+            android:text="@string/_0"
+            android:textColor="@color/white" />
 
     </LinearLayout>
 
@@ -114,7 +119,7 @@
         android:layout_margin="2dp"
         android:background="@drawable/gradient_bg"
         android:gravity="center"
-        android:text="C"
+        android:text="@string/c"
         android:textColor="@color/white"
         android:textSize="40sp"
         app:layout_constraintBottom_toTopOf="@id/guidelineH1"
@@ -130,29 +135,13 @@
         android:layout_margin="2dp"
         android:background="@drawable/gradient_bg"
         android:gravity="center"
-        android:text="="
+        android:text="@string/equal"
         android:textColor="@color/white"
         android:textSize="40sp"
         app:layout_constraintBottom_toTopOf="@id/guidelineH1"
         app:layout_constraintEnd_toStartOf="@id/guidelineV2"
         app:layout_constraintStart_toEndOf="@id/guidelineV1"
         app:layout_constraintTop_toBottomOf="@id/divider" />
-
-    <TextView
-        android:id="@+id/mod"
-        android:layout_width="0dp"
-        android:layout_height="0dp"
-        android:layout_margin="2dp"
-        android:background="@drawable/gradient_bg"
-        android:gravity="center"
-        android:text="%"
-        android:textColor="@color/white"
-        android:textSize="40sp"
-        app:layout_constraintBottom_toTopOf="@id/guidelineH1"
-        app:layout_constraintEnd_toStartOf="@id/guidelineV3"
-        app:layout_constraintStart_toEndOf="@id/guidelineV2"
-        app:layout_constraintTop_toBottomOf="@id/divider" />
-
 
     <ImageView
         android:id="@+id/delete"
@@ -163,9 +152,10 @@
         android:padding="24dp"
         android:src="@drawable/ic_backspace"
         app:layout_constraintBottom_toTopOf="@id/guidelineH1"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@id/guidelineV3"
-        app:layout_constraintTop_toBottomOf="@id/divider" />
+        app:layout_constraintEnd_toStartOf="@+id/guidelineV3"
+        app:layout_constraintStart_toEndOf="@+id/equal"
+        app:layout_constraintTop_toBottomOf="@id/divider"
+        tools:ignore="ContentDescription" />
 
 
     <TextView
@@ -175,7 +165,7 @@
         android:layout_margin="2dp"
         android:background="@drawable/number_bg"
         android:gravity="center"
-        android:text="7"
+        android:text="@string/_7"
         android:textColor="@color/white"
         android:textSize="40sp"
         app:layout_constraintBottom_toTopOf="@id/guidelineH2"
@@ -191,7 +181,7 @@
         android:layout_margin="2dp"
         android:background="@drawable/number_bg"
         android:gravity="center"
-        android:text="8"
+        android:text="@string/_8"
         android:textColor="@color/white"
         android:textSize="40sp"
         app:layout_constraintBottom_toTopOf="@id/guidelineH2"
@@ -206,7 +196,7 @@
         android:layout_margin="2dp"
         android:background="@drawable/number_bg"
         android:gravity="center"
-        android:text="9"
+        android:text="@string/_9"
         android:textColor="@color/white"
         android:textSize="40sp"
         app:layout_constraintBottom_toTopOf="@id/guidelineH2"
@@ -222,13 +212,13 @@
         android:layout_margin="2dp"
         android:background="@drawable/gradient_bg"
         android:gravity="center"
-        android:text="÷"
+        android:text="@string/divide"
         android:textColor="@color/white"
         android:textSize="40sp"
-        app:layout_constraintBottom_toTopOf="@id/guidelineH2"
+        app:layout_constraintBottom_toTopOf="@+id/guidelineH1"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@id/guidelineV3"
-        app:layout_constraintTop_toBottomOf="@id/guidelineH1" />
+        app:layout_constraintTop_toTopOf="@+id/divider" />
 
 
     <TextView
@@ -238,7 +228,7 @@
         android:layout_margin="2dp"
         android:background="@drawable/number_bg"
         android:gravity="center"
-        android:text="4"
+        android:text="@string/_4"
         android:textColor="@color/white"
         android:textSize="40sp"
         app:layout_constraintBottom_toTopOf="@id/guidelineH3"
@@ -254,7 +244,7 @@
         android:layout_margin="2dp"
         android:background="@drawable/number_bg"
         android:gravity="center"
-        android:text="5"
+        android:text="@string/_5"
         android:textColor="@color/white"
         android:textSize="40sp"
         app:layout_constraintBottom_toTopOf="@id/guidelineH3"
@@ -269,7 +259,7 @@
         android:layout_margin="2dp"
         android:background="@drawable/number_bg"
         android:gravity="center"
-        android:text="6"
+        android:text="@string/_6"
         android:textColor="@color/white"
         android:textSize="40sp"
         app:layout_constraintBottom_toTopOf="@id/guidelineH3"
@@ -285,13 +275,13 @@
         android:layout_margin="2dp"
         android:background="@drawable/gradient_bg"
         android:gravity="center"
-        android:text="×"
+        android:text="@string/multiply"
         android:textColor="@color/white"
         android:textSize="40sp"
-        app:layout_constraintBottom_toTopOf="@id/guidelineH3"
+        app:layout_constraintBottom_toTopOf="@+id/guidelineH2"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@id/guidelineV3"
-        app:layout_constraintTop_toBottomOf="@id/guidelineH2" />
+        app:layout_constraintTop_toTopOf="@+id/guidelineH1" />
 
 
     <TextView
@@ -301,7 +291,7 @@
         android:layout_margin="2dp"
         android:background="@drawable/number_bg"
         android:gravity="center"
-        android:text="1"
+        android:text="@string/_1"
         android:textColor="@color/white"
         android:textSize="40sp"
         app:layout_constraintBottom_toTopOf="@id/guidelineH4"
@@ -317,7 +307,7 @@
         android:layout_margin="2dp"
         android:background="@drawable/number_bg"
         android:gravity="center"
-        android:text="2"
+        android:text="@string/_2"
         android:textColor="@color/white"
         android:textSize="40sp"
         app:layout_constraintBottom_toTopOf="@id/guidelineH4"
@@ -332,7 +322,7 @@
         android:layout_margin="2dp"
         android:background="@drawable/number_bg"
         android:gravity="center"
-        android:text="3"
+        android:text="@string/_3"
         android:textColor="@color/white"
         android:textSize="40sp"
         app:layout_constraintBottom_toTopOf="@id/guidelineH4"
@@ -347,13 +337,29 @@
         android:layout_margin="2dp"
         android:background="@drawable/gradient_bg"
         android:gravity="center"
-        android:text="-"
+        android:text="@string/minus"
         android:textColor="@color/white"
         android:textSize="40sp"
-        app:layout_constraintBottom_toTopOf="@id/guidelineH4"
+        app:layout_constraintBottom_toTopOf="@+id/guidelineH3"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@id/guidelineV3"
-        app:layout_constraintTop_toBottomOf="@id/guidelineH3" />
+        app:layout_constraintTop_toTopOf="@+id/guidelineH2" />
+
+
+    <TextView
+        android:id="@+id/dot"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_margin="2dp"
+        android:background="@drawable/number_bg"
+        android:gravity="center"
+        android:text="@string/dot"
+        android:textColor="@color/white"
+        android:textSize="40sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@id/guidelineV1"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/guidelineH4" />
 
 
     <TextView
@@ -363,27 +369,42 @@
         android:layout_margin="2dp"
         android:background="@drawable/number_bg"
         android:gravity="center"
-        android:text="0"
+        android:text="@string/_0"
         android:textColor="@color/white"
         android:textSize="40sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toStartOf="@id/guidelineV2"
-        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintStart_toStartOf="@+id/guidelineV1"
         app:layout_constraintTop_toBottomOf="@id/guidelineH4" />
 
     <TextView
-        android:id="@+id/n."
+        android:id="@+id/bOpen"
         android:layout_width="0dp"
         android:layout_height="0dp"
         android:layout_margin="2dp"
-        android:background="@drawable/number_bg"
+        android:background="@drawable/gradient_bg"
         android:gravity="center"
-        android:text="."
+        android:text="@string/bracketOpen"
         android:textColor="@color/white"
         android:textSize="40sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toStartOf="@id/guidelineV3"
         app:layout_constraintStart_toEndOf="@id/guidelineV2"
+        app:layout_constraintTop_toBottomOf="@id/guidelineH4" />
+
+    <TextView
+        android:id="@+id/bClose"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_margin="2dp"
+        android:background="@drawable/gradient_bg"
+        android:gravity="center"
+        android:text="@string/bracketClose"
+        android:textColor="@color/white"
+        android:textSize="40sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/bOpen"
         app:layout_constraintTop_toBottomOf="@id/guidelineH4" />
 
     <TextView
@@ -393,13 +414,13 @@
         android:layout_margin="2dp"
         android:background="@drawable/gradient_bg"
         android:gravity="center"
-        android:text="+"
+        android:text="@string/plus"
         android:textColor="@color/white"
         android:textSize="40sp"
-        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintBottom_toTopOf="@+id/guidelineH4"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@id/guidelineV3"
-        app:layout_constraintTop_toBottomOf="@id/guidelineH4" />
+        app:layout_constraintTop_toTopOf="@+id/guidelineH3" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>
