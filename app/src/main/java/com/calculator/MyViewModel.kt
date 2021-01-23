@@ -1,7 +1,6 @@
 package com.calculator
 
 import android.util.Log
-import android.util.Range
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import net.objecthunter.exp4j.ExpressionBuilder
@@ -12,16 +11,16 @@ class MyViewModel : ViewModel() {
     val answer = MutableLiveData<String>()
 
     init {
-        exp.value="0"
-        answer.value="0"
+        exp.value = "0"
+        answer.value = "0"
     }
 
     fun delete() {
         val string = exp.value!!
-        if (string.length == 1 || (string.length==2 && string[0]=='-'))
+        if (string.length == 1 || (string.length == 2 && string[0] == '-'))
             reset()
         else {
-            exp.value=string.substring(0, string.length - 1)
+            exp.value = string.substring(0, string.length - 1)
             reevaluate()
         }
     }
@@ -47,7 +46,7 @@ class MyViewModel : ViewModel() {
         if (string[string.length - 1] == '.')
             string = string.substring(0, string.length - 1)
 
-        while(!string[string.length - 1].isDigit() && string.isNotEmpty())
+        while (!string[string.length - 1].isDigit() && string.isNotEmpty())
             string = string.substring(0, string.length - 1)
 
         var countO = 0
@@ -67,26 +66,26 @@ class MyViewModel : ViewModel() {
     }
 
     fun equate() {
-        exp.value=answer.value
+        exp.value = answer.value
     }
 
     fun reset() {
-        exp.value="0"
-        answer.value="0"
+        exp.value = "0"
+        answer.value = "0"
     }
 
     fun addOperator(o: Char) {
-        if (o=='-' && exp.value=="0") {
-            exp.value="-"
-            answer.value="-"
+        if (o == '-' && exp.value == "0") {
+            exp.value = "-"
+            answer.value = "-"
             return
         }
         var string = exp.value!!
         if (string[string.length - 1] == '.')
             string = string.substring(0, string.length - 1)
-        if (string[string.length - 1] == '(' && o!='-')
+        if (string[string.length - 1] == '(' && o != '-')
             return
-        if (!string[string.length - 1].isDigit() && o!='-')
+        if (!string[string.length - 1].isDigit() && o != '-')
             string = string.substring(0, string.length - 1)
         string += o.toString()
         exp.value = string
@@ -111,9 +110,9 @@ class MyViewModel : ViewModel() {
                 countC++
         }
 
-        if (string[string.length-1]=='(') {
+        if (string[string.length - 1] == '(') {
             string = string.substring(0, string.length - 1)
-            exp.value=string
+            exp.value = string
             return
         }
 
@@ -127,8 +126,8 @@ class MyViewModel : ViewModel() {
         var string = exp.value!!
         if (string.trim() == "0")
             string = ""
-        if(n=="." && string=="")
-            string="0"
+        if (n == "." && string == "")
+            string = "0"
         string += n
         exp.value = string
         Log.d("number", exp.value!!)
