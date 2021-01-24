@@ -29,15 +29,12 @@ class MyViewModel : ViewModel() {
         val text = getFormatted()
         Log.d("number", text)
         val expression = ExpressionBuilder(text).build()
-        try {
+
             val result = expression.evaluate()
             if (Math.floor(result) == result)
                 answer.value = result.toString()
             else
                 answer.value = result.toString()
-        } catch (e: Error) {
-            answer.value = "Invalid"
-        }
     }
 
     private fun getFormatted(): String {
@@ -124,6 +121,16 @@ class MyViewModel : ViewModel() {
 
     fun addNumber(n: String) {
         var string = exp.value!!
+        if (n == ".") {
+            var lastDot = false
+            for (i in string) {
+                if (i.isDigit())
+                    continue
+                lastDot = i == '.'
+            }
+            if (lastDot)
+                return
+        }
         if (string.trim() == "0")
             string = ""
         if (n == "." && string == "")
