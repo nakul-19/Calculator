@@ -4,6 +4,7 @@ import android.util.Log
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import net.objecthunter.exp4j.ExpressionBuilder
+import java.lang.Exception
 
 class MyViewModel : ViewModel() {
 
@@ -30,11 +31,15 @@ class MyViewModel : ViewModel() {
         Log.d("number", text)
         val expression = ExpressionBuilder(text).build()
 
+        try {
             val result = expression.evaluate()
             if (Math.floor(result) == result)
                 answer.value = result.toString()
             else
                 answer.value = result.toString()
+        } catch (e: Exception) {
+            answer.value="Invalid"
+        }
     }
 
     private fun getFormatted(): String {
