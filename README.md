@@ -7,6 +7,7 @@
 - Android
 - Kotlin
 - Expression Builder
+- MVVM Architecture
 
 ## 📷 Screenshots
 
